@@ -23,6 +23,27 @@ public class Transaction implements Serializable {
     private double unitPrice;
     private String unit = "cái";
     private String sku = "";
+    @androidx.room.ColumnInfo(defaultValue = "''")
+    private String documentId = "";
+    @androidx.room.ColumnInfo(defaultValue = "0")
+    private int partnerId;
+    @androidx.room.ColumnInfo(defaultValue = "''")
+    private String partnerName = "";
+    @androidx.room.ColumnInfo(defaultValue = "''")
+    private String partnerPhone = "";
+    @androidx.room.ColumnInfo(defaultValue = "''")
+    private String note = "";
+
+    public String getDocumentId() { return documentId; }
+    public void setDocumentId(String value) { documentId = value; }
+    public int getPartnerId() { return partnerId; }
+    public void setPartnerId(int value) { partnerId = value; }
+    public String getPartnerName() { return partnerName; }
+    public void setPartnerName(String value) { partnerName = value; }
+    public String getPartnerPhone() { return partnerPhone; }
+    public void setPartnerPhone(String value) { partnerPhone = value; }
+    public String getNote() { return note; }
+    public void setNote(String value) { note = value; }
 
     public int getProductId() { return productId; }
     public void setProductId(int value) { productId = value; }

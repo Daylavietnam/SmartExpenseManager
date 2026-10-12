@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.TransactionViewHolder> {
-    private List<Transaction> transactions = new ArrayList<>();
+    private List<List<Transaction>> documents = new ArrayList<>();
     private final OnTransactionActionListener listener;
 
     public interface OnTransactionActionListener {
@@ -35,7 +35,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
     }
 
     public void setTransactions(List<Transaction> transactions) {
-        this.transactions = transactions;
+        this.documents = com.group14.expensemanager.utils.StockDocuments.group(transactions);
         notifyDataSetChanged();
     }
 
@@ -48,17 +48,16 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull TransactionViewHolder holder, int position) {
-        Transaction t = transactions.get(position);
-        holder.bind(t, listener);
+        holder.bind(documents.get(position), listener);
     }
 
     @Override
     public int getItemCount() {
-        return transactions.size();
+        return documents.size();
     }
 
     static class TransactionViewHolder extends RecyclerView.ViewHolder {
-        private final TextView mtvTitle, mtvCategory, mtvAmount, mtvDate, mtvTypeIcon;
+        private final TextView mtvTitle, mtvCategory, mtvAmount, mtvDate, mtvTypeIcon, mtvLines;
         private final Button mbtnEdit, mbtnDelete;
         private final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy, HH:mm", Locale.getDefault());
         private final NumberFormat formatter = NumberFormat.getNumberInstance(Locale.forLanguageTag("vi-VN"));
@@ -66,6 +65,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         public TransactionViewHolder(@NonNull View itemView) {
             super(itemView);
             mtvTitle = itemView.findViewById(R.id.mtv_transaction_title);
+            mtvLines = itemView.findViewById(R.id.mtv_document_lines);
             mtvCategory = itemView.findViewById(R.id.mtv_category);
             mtvAmount = itemView.findViewById(R.id.mtv_transaction_amount);
             mtvDate = itemView.findViewById(R.id.mtv_transaction_date);
@@ -74,24 +74,31 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
             mbtnDelete = itemView.findViewById(R.id.mbtn_delete);
         }
 
-        public void bind(Transaction t, OnTransactionActionListener listener) {
-            mtvTitle.setText(t.getSku() + " — " + t.getTitle());
-            mtvCategory.setText(t.getCategory());
+        public void bind(List<Transaction> lines, OnTransactionActionListener listener) {
+            Transaction t = lines.get(0);
+            mtvTitle.setText((t.isIncome() ? "Phiếu nhập " : "Phiếu xuất ") + com.group14.expensemanager.utils.StockDocuments.number(t));
+            mtvCategory.setText(lines.size() + " dòng hàng");
             mtvDate.setText(sdf.format(new Date(t.getTimestamp())));
+            StringBuilder body = new StringBuilder();
+            body.append(t.isIncome() ? "Nhà cung cấp: " : "Khách hàng: ").append(t.getPartnerName().isEmpty() ? "Chưa chọn" : t.getPartnerName());
+            if (!t.getPartnerPhone().isEmpty()) body.append(" • ").append(t.getPartnerPhone());
+            for (Transaction line : lines) body.append("\n\n").append(line.getSku()).append(" — ").append(line.getTitle())
+                    .append("\n").append(formatter.format(line.getQuantity())).append(" ").append(line.getUnit())
+                    .append(" × ").append(formatter.format(line.getUnitPrice())).append("đ = ").append(formatter.format(line.getAmount())).append("đ");
+            if (!t.getNote().isEmpty()) body.append("\n\nGhi chú: ").append(t.getNote());
+            mtvLines.setText(body.toString());
 
             // Sử dụng màu sắc và icon từ AppAssets
             int categoryColor = ContextCompat.getColor(itemView.getContext(), R.color.ui_accent);
             mtvCategory.setBackgroundTintList(android.content.res.ColorStateList.valueOf(categoryColor));
 
             if (t.isIncome()) {
-                mtvAmount.setText("Nhập " + formatter.format(t.getQuantity()) + " " + t.getUnit()
-                        + "\n" + formatter.format(t.getAmount()) + "đ • " + formatter.format(t.getUnitPrice()) + "đ/" + t.getUnit());
+                mtvAmount.setText("Tổng tiền: " + formatter.format(com.group14.expensemanager.utils.StockDocuments.total(lines)) + "đ");
                 mtvAmount.setTextColor(ContextCompat.getColor(itemView.getContext(), R.color.income_green));
                 mtvTypeIcon.setText("↑");
                 mtvTypeIcon.setTextColor(ContextCompat.getColor(itemView.getContext(), R.color.income_green));
             } else {
-                mtvAmount.setText("Xuất " + formatter.format(t.getQuantity()) + " " + t.getUnit()
-                        + "\n" + formatter.format(t.getAmount()) + "đ • " + formatter.format(t.getUnitPrice()) + "đ/" + t.getUnit());
+                mtvAmount.setText("Tổng tiền: " + formatter.format(com.group14.expensemanager.utils.StockDocuments.total(lines)) + "đ");
                 mtvAmount.setTextColor(ContextCompat.getColor(itemView.getContext(), R.color.expense_red));
                 mtvTypeIcon.setText("↓");
                 mtvTypeIcon.setTextColor(ContextCompat.getColor(itemView.getContext(), R.color.expense_red));

@@ -21,7 +21,7 @@ public class CsvExporter {
             writer.write("<html><head><meta charset='utf-8'></head><body>");
             writer.write("<table border='1'>");
             writer.write("<tr style='background-color: #8AC9FF; font-weight: bold;'>");
-            writer.write("<td>Ngày</td><td>Mã hàng</td><td>Sản phẩm</td><td>Nhóm sản phẩm</td><td>Loại</td><td>Số lượng</td><td>Đơn vị</td><td>Đơn giá (VNĐ)</td><td>Thành tiền (VNĐ)</td>");
+            writer.write("<td>Mã phiếu</td><td>Ngày</td><td>Đối tác</td><td>Điện thoại</td><td>Ghi chú</td><td>Mã hàng</td><td>Sản phẩm</td><td>Nhóm sản phẩm</td><td>Loại</td><td>Số lượng</td><td>Đơn vị</td><td>Đơn giá (VNĐ)</td><td>Thành tiền (VNĐ)</td>");
             writer.write("</tr>");
 
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
@@ -30,7 +30,9 @@ public class CsvExporter {
                 String color = t.isIncome() ? "#22C55E" : "#FF4444";
                 
                 writer.write("<tr>");
+                writer.write("<td>" + escape(StockDocuments.number(t)) + "</td>");
                 writer.write("<td>" + sdf.format(new Date(t.getTimestamp())) + "</td>");
+                writer.write("<td>" + escape(t.getPartnerName()) + "</td><td>" + escape(t.getPartnerPhone()) + "</td><td>" + escape(t.getNote()) + "</td>");
                 writer.write("<td>" + escape(t.getSku()) + "</td>");
                 writer.write("<td>" + escape(t.getTitle()) + "</td>");
                 writer.write("<td>" + escape(t.getCategory()) + "</td>");

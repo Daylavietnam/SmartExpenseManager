@@ -21,6 +21,8 @@ public class DetailViewModel extends AndroidViewModel {
     private final TransactionRepository repository;
     private final MutableLiveData<FilterType> currentFilter = new MutableLiveData<>(FilterType.ALL);
     private final MutableLiveData<Calendar> filterDate = new MutableLiveData<>(Calendar.getInstance());
+    private final MutableLiveData<String> search = new MutableLiveData<>("");
+    private final MutableLiveData<Integer> partner = new MutableLiveData<>(0);
     private final MediatorLiveData<List<Transaction>> filteredTransactions = new MediatorLiveData<>();
     private final MediatorLiveData<SummaryData> summaryData = new MediatorLiveData<>();
 
@@ -39,6 +41,8 @@ public class DetailViewModel extends AndroidViewModel {
         filteredTransactions.addSource(filterDate, date -> {
             applyFilter(repository.getTransactions().getValue(), currentFilter.getValue(), date);
         });
+        filteredTransactions.addSource(search, query -> applyFilter(repository.getTransactions().getValue(), currentFilter.getValue(), filterDate.getValue()));
+        filteredTransactions.addSource(partner, id -> applyFilter(repository.getTransactions().getValue(), currentFilter.getValue(), filterDate.getValue()));
 
         summaryData.addSource(filteredTransactions, transactions -> {
             summaryData.setValue(calculateSummary(transactions));
@@ -60,13 +64,27 @@ public class DetailViewModel extends AndroidViewModel {
     public void setFilterDate(Calendar date) {
         filterDate.setValue(date);
     }
+    public void setSearch(String query) { search.setValue(query); }
+    public void setPartner(int id) { partner.setValue(id); }
+
+    private String normalized(String value) {
+        return java.text.Normalizer.normalize(value == null ? "" : value, java.text.Normalizer.Form.NFD)
+                .replaceAll("\\p{M}", "").toLowerCase(java.util.Locale.ROOT).replace('đ', 'd');
+    }
 
     private void applyFilter(List<Transaction> all, FilterType filter, Calendar targetDate) {
         if (all == null) return;
         List<Transaction> result = new ArrayList<>();
         Calendar dateToUse = (targetDate != null) ? targetDate : Calendar.getInstance();
 
-        for (Transaction t : all) {
+        String query = normalized(search.getValue()).trim();
+        for (List<Transaction> document : com.group14.expensemanager.utils.StockDocuments.group(all)) {
+            Transaction t = document.get(0);
+            if (partner.getValue() != null && partner.getValue() != 0 && t.getPartnerId() != partner.getValue()) continue;
+            StringBuilder terms = new StringBuilder(com.group14.expensemanager.utils.StockDocuments.number(t))
+                    .append(' ').append(t.getPartnerName()).append(' ').append(t.getPartnerPhone()).append(' ').append(t.getNote());
+            for (Transaction line : document) terms.append(' ').append(line.getSku()).append(' ').append(line.getTitle());
+            if (!normalized(terms.toString()).contains(query)) continue;
             Calendar date = Calendar.getInstance();
             date.setTimeInMillis(t.getTimestamp());
 
@@ -77,7 +95,7 @@ public class DetailViewModel extends AndroidViewModel {
                 case MONTH: match = isSameMonth(dateToUse, date); break;
                 case ALL: match = true; break;
             }
-            if (match) result.add(t);
+            if (match) result.addAll(document);
         }
         result.sort((t1, t2) -> Long.compare(t2.getTimestamp(), t1.getTimestamp()));
         filteredTransactions.setValue(result);

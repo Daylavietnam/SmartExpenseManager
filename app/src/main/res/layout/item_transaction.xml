@@ -9,6 +9,7 @@
    <TextView android:id="@+id/mtv_category" android:layout_width="wrap_content" android:layout_height="28dp" android:background="@drawable/bg_category_chip" android:paddingHorizontal="10dp" android:gravity="center" android:textSize="12sp" android:textColor="@color/ui_primary" />
    <TextView android:id="@+id/mtv_transaction_date" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="8dp" android:gravity="end" android:textSize="12sp" android:textColor="@color/ui_muted" />
   </LinearLayout>
+  <TextView android:id="@+id/mtv_document_lines" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:textSize="14sp" android:lineSpacingExtra="3dp" android:textColor="@color/ui_text" />
   <TextView android:id="@+id/mtv_transaction_amount" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:textSize="16sp" android:lineSpacingExtra="5dp" android:fontFamily="sans-serif-medium" />
   <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="end" android:orientation="horizontal">
    <com.google.android.material.button.MaterialButton android:id="@+id/mbtn_edit" style="@style/Widget.Material3.Button.TextButton" android:layout_width="wrap_content" android:layout_height="48dp" android:text="Sửa" android:textAllCaps="false" android:contentDescription="Sửa phiếu kho" app:icon="@drawable/ic_edit" app:iconSize="18dp" />

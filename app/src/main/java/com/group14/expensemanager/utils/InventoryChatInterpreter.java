@@ -21,9 +21,12 @@ public final class InventoryChatInterpreter {
         public Double quantity;
         public Double unitPrice;
         public String suppliedUnit;
+        public int partnerId;
+        public boolean awaitingPartner;
         Draft copy() {
             Draft d = new Draft(); d.type = type; d.productId = productId;
-            d.quantity = quantity; d.unitPrice = unitPrice; d.suppliedUnit = suppliedUnit; return d;
+            d.quantity = quantity; d.unitPrice = unitPrice; d.suppliedUnit = suppliedUnit;
+            d.partnerId = partnerId; d.awaitingPartner = awaitingPartner; return d;
         }
     }
     public static class Result {

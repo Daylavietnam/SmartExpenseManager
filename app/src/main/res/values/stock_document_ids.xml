@@ -1,0 +1,11 @@
+<resources>
+    <item name="stock_document_fields" type="id"/>
+    <item name="stock_partner" type="id"/>
+    <item name="stock_note" type="id"/>
+    <item name="stock_add_line" type="id"/>
+    <item name="stock_quantity" type="id"/>
+    <item name="stock_price" type="id"/>
+    <item name="stock_product" type="id"/>
+    <item name="stock_total" type="id"/>
+    <item name="stock_search_documents" type="id"/>
+</resources>

@@ -133,6 +133,12 @@ public class MainActivity extends AppCompatActivity {
         catalog.setText("Sản phẩm & tồn kho");
         catalog.setOnClickListener(v -> startActivity(new Intent(this, ProductActivity.class)));
         parent.addView(catalog, parent.indexOfChild(tilBudget));
+        com.google.android.material.button.MaterialButton partners = new com.google.android.material.button.MaterialButton(this);
+        partners.setText("Khách hàng & nhà cung cấp");
+        partners.setBackgroundTintList(android.content.res.ColorStateList.valueOf(androidx.core.content.ContextCompat.getColor(this, R.color.ui_accent)));
+        partners.setTextColor(androidx.core.content.ContextCompat.getColor(this, R.color.ui_primary));
+        partners.setOnClickListener(v -> startActivity(new Intent(this, PartnerActivity.class)));
+        parent.addView(partners, parent.indexOfChild(tilBudget));
         com.group14.expensemanager.data.TransactionRepository repository =
                 com.group14.expensemanager.data.TransactionRepository.getInstance(getApplication());
         androidx.lifecycle.LiveData<java.util.List<com.group14.expensemanager.model.Product>> catalogData = repository.getProducts();

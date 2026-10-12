@@ -42,7 +42,7 @@
         android:paddingStart="18dp"
         android:paddingEnd="18dp"
         android:paddingBottom="8dp"
-        android:text="Nhập 20 NS001 • Xuất 5 NS001\nXuất hàng: trả lời đơn giá rồi mới trừ kho."
+        android:text="Nhập 20 NS001 nhà cung cấp TÊN\nXuất 5 NS001 khách hàng TÊN giá 5000\nThiếu đối tác hoặc giá xuất: chat sẽ hỏi trước khi lưu."
         android:textSize="12sp"
         android:textColor="?attr/colorOnSurfaceVariant"
         app:layout_constraintTop_toBottomOf="@id/mtv_chat_title"

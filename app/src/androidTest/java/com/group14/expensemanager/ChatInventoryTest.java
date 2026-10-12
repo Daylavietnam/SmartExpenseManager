@@ -48,16 +48,25 @@ public class ChatInventoryTest {
         Product product = new Product(); product.sku = "CHATTEST" + System.nanoTime(); product.name = product.sku;
         product.referencePrice = 5000; product.unit = "chai";
         product.id = (int) db.productDao().insert(product);
+        Partner supplier=new Partner();supplier.name=product.sku+" NCC";supplier.type=Partner.SUPPLIER;supplier.phone="0900123456";supplier.id=(int)db.partnerDao().insert(supplier);
+        Partner customer=new Partner();customer.name=product.sku+" KH";customer.type=Partner.CUSTOMER;customer.id=(int)db.partnerDao().insert(customer);
         try (ActivityScenario<AiChatActivity> screen = ActivityScenario.launch(AiChatActivity.class)) {
             await(() -> {
                 AtomicReference<Boolean> loaded = new AtomicReference<>(false);
                 screen.onActivity(activity -> {
                     java.util.List<Product> products = com.group14.expensemanager.data.TransactionRepository.getInstance(app).getProducts().getValue();
-                    if (products != null) for (Product p : products) if (p.id == product.id) loaded.set(true);
+                    java.util.List<Partner> contacts=com.group14.expensemanager.data.TransactionRepository.getInstance(app).getPartners().getValue();
+                    boolean hasSupplier=false,hasCustomer=false;
+                    if(contacts!=null)for(Partner contact:contacts){hasSupplier|=contact.id==supplier.id;hasCustomer|=contact.id==customer.id;}
+                    if (hasSupplier&&hasCustomer&&products != null) for (Product p : products) if (p.id == product.id) loaded.set(true);
                 });
                 return loaded.get();
             });
             send(screen, "Tôi đã thêm 10 chai " + product.sku);
+            assertEquals(0,count(db,product.id));
+            assertTrue(chatLog(db).contains("nhà cung cấp"));
+            screen.recreate();
+            send(screen,supplier.name);
             await(() -> count(db, product.id) == 1);
             assertEquals(10, StockCalculator.stock(product.id, db.transactionDao().getTransactionsForExport()), 0);
             send(screen, "Tôi đã suất 3 chai " + product.sku);
@@ -66,25 +75,32 @@ public class ChatInventoryTest {
             assertTrue(chatLog(db).contains("đơn giá bao nhiêu"));
             screen.recreate();
             send(screen, "giá 6000");
+            assertEquals(1,count(db,product.id));
+            assertTrue(chatLog(db).contains("khách hàng"));
+            screen.recreate();send(screen,customer.name);
             assertEquals(chatLog(db), 7, StockCalculator.stock(product.id, db.transactionDao().getTransactionsForExport()), 0);
-            send(screen, "xuất 100 " + product.sku + " đơn giá 6000");
+            send(screen, "xuất 100 " + product.sku + " khách hàng " + customer.name + " đơn giá 6000");
             assertEquals(2, count(db, product.id));
             assertEquals(7, StockCalculator.stock(product.id, db.transactionDao().getTransactionsForExport()), 0);
             send(screen, "nhập " + product.sku);
             assertEquals(2, count(db, product.id));
             send(screen, "2 chai " + product.sku);
+            assertEquals(2,count(db,product.id));send(screen,supplier.name);
             assertEquals(9, StockCalculator.stock(product.id, db.transactionDao().getTransactionsForExport()), 0);
-            send(screen, "nhập 1 " + product.sku + " đơn giá 7000đ");
+            send(screen, "nhập 1 " + product.sku + " nhà cung cấp " + supplier.name + " đơn giá 7000đ");
             assertEquals(10, StockCalculator.stock(product.id, db.transactionDao().getTransactionsForExport()), 0);
             boolean defaultPrice = false, explicitPrice = false;
             for (Transaction t : db.transactionDao().getTransactionsForExport()) if (t.getProductId() == product.id) {
                 defaultPrice |= t.getUnitPrice() == 5000; explicitPrice |= t.getUnitPrice() == 7000;
+                assertEquals(t.isIncome()?supplier.id:customer.id,t.getPartnerId());
+                assertEquals(t.isIncome()?supplier.name:customer.name,t.getPartnerName());
             }
             assertTrue(defaultPrice); assertTrue(explicitPrice);
         } finally {
             db.runInTransaction(() -> {
                 for (Transaction t : db.transactionDao().getTransactionsForExport()) if (t.getProductId() == product.id) db.transactionDao().delete(t);
                 db.productDao().delete(product);
+                db.partnerDao().delete(supplier);db.partnerDao().delete(customer);
                 db.getOpenHelper().getWritableDatabase().execSQL("DELETE FROM chat_messages WHERE content LIKE ?", new Object[]{"%" + product.sku + "%"});
             });
         }

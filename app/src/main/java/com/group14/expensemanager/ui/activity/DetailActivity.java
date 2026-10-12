@@ -63,6 +63,13 @@ public class DetailActivity extends AppCompatActivity {
         setupThemeSwitch();
         observeViewModel();
         setupNavigation();
+        android.widget.EditText search = findViewById(R.id.stock_search_documents);
+        com.group14.expensemanager.ui.StockUi.watch(search, () -> viewModel.setSearch(search.getText().toString()));
+        viewModel.setPartner(getIntent().getIntExtra("PARTNER_ID", 0));
+        if (getIntent().getIntExtra("PARTNER_ID", 0) != 0) {
+            search.setHint("Phiếu của " + getIntent().getStringExtra("PARTNER_NAME"));
+            ((TextView) findViewById(R.id.mtv_toolbar_title)).setText(getIntent().getStringExtra("PARTNER_NAME"));
+        }
 
         mbtnFilter.setOnClickListener(v -> showFilterMenu());
     }
@@ -88,7 +95,7 @@ public class DetailActivity extends AppCompatActivity {
     private void showDeleteConfirmation(Transaction transaction) {
         new AlertDialog.Builder(this)
                 .setTitle("Xác nhận xóa")
-                .setMessage("Bạn có chắc chắn muốn xóa phiếu kho này không?")
+                .setMessage("Xóa toàn bộ phiếu " + com.group14.expensemanager.utils.StockDocuments.number(transaction) + " và tất cả dòng sản phẩm? Tồn kho sẽ được tính lại.")
                 .setPositiveButton("Đồng ý", (dialog, which) -> {
                     com.group14.expensemanager.data.TransactionRepository.getInstance(getApplication())
                             .deleteMovement(transaction, error -> Toast.makeText(this,

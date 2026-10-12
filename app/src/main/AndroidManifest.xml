@@ -41,6 +41,7 @@
             android:exported="false" />
 
         <activity android:name=".ui.activity.ProductActivity" android:exported="false" />
+        <activity android:name=".ui.activity.PartnerActivity" android:exported="false" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
