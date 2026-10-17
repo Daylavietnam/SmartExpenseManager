@@ -75,7 +75,6 @@ public final class ExcelExporter {
             summary(writer, 3, "Tổng tiền nhập (VNĐ)", sumFormula(incomingStart, incoming.size()), totalIn, 2);
             summary(writer, 4, "Tổng tiền xuất (VNĐ)", sumFormula(outgoingStart, outgoing.size()), totalOut, 2);
             summary(writer, 5, "Chênh lệch xuất − nhập (VNĐ)", "C4-C3", totalOut-totalIn, 3);
-            heading(writer, 6, "Dương: xuất > nhập; âm: xuất < nhập; 0: cân bằng. Đây là chênh lệch giá trị, không phải lợi nhuận.");
             heading(writer, 8, "1. NHẬP KHO");
             movements(writer, 9, incoming, "Nhà cung cấp");
             heading(writer, outgoingStart - 2, "2. XUẤT KHO");
