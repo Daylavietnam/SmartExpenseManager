@@ -1,0 +1,3688 @@
+[
+  {
+    "name": "01 - Tong quan",
+    "nodes": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 844,
+        "c": "#F3F6F8",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 22,
+        "y": 12,
+        "s": "9:41",
+        "size": 12,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 306,
+        "y": 12,
+        "s": "LTE  100%",
+        "size": 11,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 44,
+        "w": 28,
+        "h": 28,
+        "c": "#087F72",
+        "r": 8,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 27,
+        "y": 49,
+        "s": "S",
+        "size": 18,
+        "c": "#FFFFFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 58,
+        "y": 48,
+        "s": "SmartStock",
+        "size": 18,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 327,
+        "y": 49,
+        "s": "•••",
+        "size": 18,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 98,
+        "s": "Tổng quan kho",
+        "size": 26,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 136,
+        "s": "Thứ Sáu, 16 tháng 10, 2026",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 766,
+        "w": 390,
+        "h": 78,
+        "c": "#FFFFFF",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 766,
+        "w": 390,
+        "h": 1,
+        "c": "#E1E9ED",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 23.0,
+        "y": 774,
+        "w": 52,
+        "h": 28,
+        "c": "#DDF3EE",
+        "r": 14,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 40.0,
+        "y": 777,
+        "s": "⌂",
+        "size": 20,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 17.0,
+        "y": 810,
+        "s": "Trang chủ",
+        "size": 12,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 137.5,
+        "y": 777,
+        "s": "↕",
+        "size": 20,
+        "c": "#647985",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 114.5,
+        "y": 810,
+        "s": "Nhập–xuất",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 235.0,
+        "y": 777,
+        "s": "",
+        "size": 20,
+        "c": "#647985",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 233.0,
+        "y": 790,
+        "w": 4,
+        "h": 9,
+        "c": "#647985",
+        "r": 1,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 239.0,
+        "y": 782,
+        "w": 4,
+        "h": 17,
+        "c": "#647985",
+        "r": 1,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 245.0,
+        "y": 786,
+        "w": 4,
+        "h": 13,
+        "c": "#647985",
+        "r": 1,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 212.0,
+        "y": 810,
+        "s": "Báo cáo",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 332.5,
+        "y": 777,
+        "s": "≡",
+        "size": 20,
+        "c": "#647985",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 309.5,
+        "y": 810,
+        "s": "Lịch sử",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 174,
+        "w": 350,
+        "h": 148,
+        "c": "#075E54",
+        "r": 22,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 40,
+        "y": 195,
+        "s": "GIÁ TRỊ TỒN KHO",
+        "size": 12,
+        "c": "#BCE8DB",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 40,
+        "y": 224,
+        "s": "18.650.000 đ",
+        "size": 32,
+        "c": "#FFFFFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 40,
+        "y": 278,
+        "s": "Theo giá tham chiếu của sản phẩm",
+        "size": 12,
+        "c": "#BCE8DB",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 336,
+        "w": 169,
+        "h": 90,
+        "c": "#FFFFFF",
+        "r": 16,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 352,
+        "s": "Nhập tháng này",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 379,
+        "s": "12.500.000 đ",
+        "size": 19,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 201,
+        "y": 336,
+        "w": 169,
+        "h": 90,
+        "c": "#FFFFFF",
+        "r": 16,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 217,
+        "y": 352,
+        "s": "Xuất tháng này",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 217,
+        "y": 379,
+        "s": "8.200.000 đ",
+        "size": 19,
+        "c": "#D96545",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 451,
+        "s": "Quản lý kho",
+        "size": 17,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 480,
+        "w": 169,
+        "h": 84,
+        "c": "#FFFFFF",
+        "r": 16,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 496,
+        "s": "Sản phẩm",
+        "size": 16,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 526,
+        "s": "24 mặt hàng",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 201,
+        "y": 480,
+        "w": 169,
+        "h": 84,
+        "c": "#FFFFFF",
+        "r": 16,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 217,
+        "y": 496,
+        "s": "Đối tác",
+        "size": 16,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 217,
+        "y": 526,
+        "s": "Khách hàng · NCC",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 590,
+        "s": "Cần nhập thêm",
+        "size": 17,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 294,
+        "y": 592,
+        "s": "Xem tất cả",
+        "size": 12,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 620,
+        "w": 350,
+        "h": 66,
+        "c": "#FFFFFF",
+        "r": 20,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 635,
+        "s": "Bánh quy bơ",
+        "size": 15,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 659,
+        "s": "BK001 · Tối thiểu 10 hộp",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 280,
+        "y": 639,
+        "w": 72,
+        "h": 28,
+        "c": "#FFF0E9",
+        "r": 10,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 291,
+        "y": 646,
+        "s": "Còn 8",
+        "size": 13,
+        "c": "#D96545",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 704,
+        "w": 350,
+        "h": 48,
+        "c": "#087F72",
+        "r": 14,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 719,
+        "s": "Trò chuyện với trợ lý AI  →",
+        "size": 15,
+        "c": "#FFFFFF",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "name": "02 - San pham",
+    "nodes": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 844,
+        "c": "#F3F6F8",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 22,
+        "y": 12,
+        "s": "9:41",
+        "size": 12,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 306,
+        "y": 12,
+        "s": "LTE  100%",
+        "size": 11,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 44,
+        "w": 28,
+        "h": 28,
+        "c": "#087F72",
+        "r": 8,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 27,
+        "y": 49,
+        "s": "S",
+        "size": 18,
+        "c": "#FFFFFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 58,
+        "y": 48,
+        "s": "SmartStock",
+        "size": 18,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 327,
+        "y": 49,
+        "s": "•••",
+        "size": 18,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 98,
+        "s": "Sản phẩm",
+        "size": 26,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 136,
+        "s": "Theo dõi số lượng và giá tham chiếu",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 176,
+        "s": "TÌM KIẾM",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 198,
+        "w": 350,
+        "h": 46,
+        "c": "#FFFFFF",
+        "r": 12,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 34,
+        "y": 213,
+        "s": "Tìm tên hoặc mã sản phẩm…",
+        "size": 14,
+        "c": "#172B36",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 258,
+        "w": 90,
+        "h": 30,
+        "c": "#DDF3EE",
+        "r": 15,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 34,
+        "y": 266,
+        "s": "Tất cả (24)",
+        "size": 12,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 126,
+        "y": 266,
+        "s": "Sắp hết (3)",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 245,
+        "y": 266,
+        "s": "Đồ uống",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 310,
+        "w": 350,
+        "h": 104,
+        "c": "#FFFFFF",
+        "r": 20,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "rect",
+        "x": 36,
+        "y": 326,
+        "w": 42,
+        "h": 42,
+        "c": "#DDF3EE",
+        "r": 12,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 47,
+        "y": 335,
+        "s": "NS",
+        "size": 16,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 90,
+        "y": 327,
+        "s": "Nước suối 500ml",
+        "size": 16,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 90,
+        "y": 352,
+        "s": "NS001 · Chai",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 387,
+        "s": "Giá: 5.000 đ",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 257,
+        "y": 387,
+        "s": "Tồn: 120",
+        "size": 14,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 430,
+        "w": 350,
+        "h": 104,
+        "c": "#FFFFFF",
+        "r": 20,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "rect",
+        "x": 36,
+        "y": 446,
+        "w": 42,
+        "h": 42,
+        "c": "#DDF3EE",
+        "r": 12,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 47,
+        "y": 455,
+        "s": "BK",
+        "size": 16,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 90,
+        "y": 447,
+        "s": "Bánh quy bơ",
+        "size": 16,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 90,
+        "y": 472,
+        "s": "BK001 · Hộp",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 507,
+        "s": "Giá: 25.000 đ",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 257,
+        "y": 507,
+        "s": "Tồn: 8",
+        "size": 14,
+        "c": "#D96545",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 550,
+        "w": 350,
+        "h": 104,
+        "c": "#FFFFFF",
+        "r": 20,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "rect",
+        "x": 36,
+        "y": 566,
+        "w": 42,
+        "h": 42,
+        "c": "#DDF3EE",
+        "r": 12,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 47,
+        "y": 575,
+        "s": "KT",
+        "size": 16,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 90,
+        "y": 567,
+        "s": "Kẹo trái cây",
+        "size": 16,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 90,
+        "y": 592,
+        "s": "KT001 · Gói",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 627,
+        "s": "Giá: 15.000 đ",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 257,
+        "y": 627,
+        "s": "Tồn: 36",
+        "size": 14,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 706,
+        "w": 350,
+        "h": 48,
+        "c": "#087F72",
+        "r": 14,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 721,
+        "s": "+  Thêm sản phẩm",
+        "size": 15,
+        "c": "#FFFFFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 778,
+        "s": "‹  Trở về tổng quan",
+        "size": 14,
+        "c": "#087F72",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "name": "03 - Nhap kho",
+    "nodes": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 844,
+        "c": "#F3F6F8",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 22,
+        "y": 12,
+        "s": "9:41",
+        "size": 12,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 306,
+        "y": 12,
+        "s": "LTE  100%",
+        "size": 11,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 44,
+        "w": 28,
+        "h": 28,
+        "c": "#087F72",
+        "r": 8,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 27,
+        "y": 49,
+        "s": "S",
+        "size": 18,
+        "c": "#FFFFFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 58,
+        "y": 48,
+        "s": "SmartStock",
+        "size": 18,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 327,
+        "y": 49,
+        "s": "•••",
+        "size": 18,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 98,
+        "s": "Tạo phiếu nhập",
+        "size": 26,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 136,
+        "s": "Ghi nhận nhiều sản phẩm trong một phiếu",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 766,
+        "w": 390,
+        "h": 78,
+        "c": "#FFFFFF",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 766,
+        "w": 390,
+        "h": 1,
+        "c": "#E1E9ED",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 40.0,
+        "y": 777,
+        "s": "⌂",
+        "size": 20,
+        "c": "#647985",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 17.0,
+        "y": 810,
+        "s": "Trang chủ",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 120.5,
+        "y": 774,
+        "w": 52,
+        "h": 28,
+        "c": "#DDF3EE",
+        "r": 14,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 137.5,
+        "y": 777,
+        "s": "↕",
+        "size": 20,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 114.5,
+        "y": 810,
+        "s": "Nhập–xuất",
+        "size": 12,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 235.0,
+        "y": 777,
+        "s": "",
+        "size": 20,
+        "c": "#647985",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 233.0,
+        "y": 790,
+        "w": 4,
+        "h": 9,
+        "c": "#647985",
+        "r": 1,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 239.0,
+        "y": 782,
+        "w": 4,
+        "h": 17,
+        "c": "#647985",
+        "r": 1,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 245.0,
+        "y": 786,
+        "w": 4,
+        "h": 13,
+        "c": "#647985",
+        "r": 1,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 212.0,
+        "y": 810,
+        "s": "Báo cáo",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 332.5,
+        "y": 777,
+        "s": "≡",
+        "size": 20,
+        "c": "#647985",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 309.5,
+        "y": 810,
+        "s": "Lịch sử",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 172,
+        "w": 350,
+        "h": 42,
+        "c": "#E1E9ED",
+        "r": 12,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 24,
+        "y": 176,
+        "w": 171,
+        "h": 34,
+        "c": "#FFFFFF",
+        "r": 10,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 70,
+        "y": 185,
+        "s": "Nhập kho",
+        "size": 14,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 245,
+        "y": 185,
+        "s": "Xuất kho",
+        "size": 14,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 230,
+        "s": "Nhà cung cấp",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 252,
+        "w": 350,
+        "h": 46,
+        "c": "#FFFFFF",
+        "r": 12,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 34,
+        "y": 267,
+        "s": "Công ty An Phát  ›",
+        "size": 14,
+        "c": "#172B36",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 310,
+        "s": "Ngày lập phiếu",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 332,
+        "w": 350,
+        "h": 46,
+        "c": "#FFFFFF",
+        "r": 12,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 34,
+        "y": 347,
+        "s": "16/10/2026  v",
+        "size": 14,
+        "c": "#172B36",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 397,
+        "s": "Sản phẩm (2)",
+        "size": 17,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 294,
+        "y": 399,
+        "s": "+ Thêm",
+        "size": 12,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 430,
+        "w": 350,
+        "h": 74,
+        "c": "#FFFFFF",
+        "r": 20,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 444,
+        "s": "Nước suối 500ml",
+        "size": 15,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 473,
+        "s": "50 chai × 3.000 đ",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 277,
+        "y": 473,
+        "s": "150.000 đ",
+        "size": 13,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 338,
+        "y": 443,
+        "s": "×",
+        "size": 16,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 516,
+        "w": 350,
+        "h": 74,
+        "c": "#FFFFFF",
+        "r": 20,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 530,
+        "s": "Bánh quy bơ",
+        "size": 15,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 559,
+        "s": "20 hộp × 18.000 đ",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 277,
+        "y": 559,
+        "s": "360.000 đ",
+        "size": 13,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 338,
+        "y": 529,
+        "s": "×",
+        "size": 16,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 611,
+        "s": "+ Thêm ghi chú",
+        "size": 13,
+        "c": "#087F72",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 650,
+        "s": "Tổng tiền",
+        "size": 14,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 245,
+        "y": 645,
+        "s": "510.000 đ",
+        "size": 22,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 698,
+        "w": 350,
+        "h": 48,
+        "c": "#087F72",
+        "r": 14,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 713,
+        "s": "Lưu phiếu nhập",
+        "size": 15,
+        "c": "#FFFFFF",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "name": "04 - Xuat kho",
+    "nodes": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 844,
+        "c": "#F3F6F8",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 22,
+        "y": 12,
+        "s": "9:41",
+        "size": 12,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 306,
+        "y": 12,
+        "s": "LTE  100%",
+        "size": 11,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 44,
+        "w": 28,
+        "h": 28,
+        "c": "#087F72",
+        "r": 8,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 27,
+        "y": 49,
+        "s": "S",
+        "size": 18,
+        "c": "#FFFFFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 58,
+        "y": 48,
+        "s": "SmartStock",
+        "size": 18,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 327,
+        "y": 49,
+        "s": "•••",
+        "size": 18,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 98,
+        "s": "Tạo phiếu xuất",
+        "size": 26,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 136,
+        "s": "Ghi nhận nhiều sản phẩm trong một phiếu",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 766,
+        "w": 390,
+        "h": 78,
+        "c": "#FFFFFF",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 766,
+        "w": 390,
+        "h": 1,
+        "c": "#E1E9ED",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 40.0,
+        "y": 777,
+        "s": "⌂",
+        "size": 20,
+        "c": "#647985",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 17.0,
+        "y": 810,
+        "s": "Trang chủ",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 120.5,
+        "y": 774,
+        "w": 52,
+        "h": 28,
+        "c": "#DDF3EE",
+        "r": 14,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 137.5,
+        "y": 777,
+        "s": "↕",
+        "size": 20,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 114.5,
+        "y": 810,
+        "s": "Nhập–xuất",
+        "size": 12,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 235.0,
+        "y": 777,
+        "s": "",
+        "size": 20,
+        "c": "#647985",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 233.0,
+        "y": 790,
+        "w": 4,
+        "h": 9,
+        "c": "#647985",
+        "r": 1,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 239.0,
+        "y": 782,
+        "w": 4,
+        "h": 17,
+        "c": "#647985",
+        "r": 1,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 245.0,
+        "y": 786,
+        "w": 4,
+        "h": 13,
+        "c": "#647985",
+        "r": 1,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 212.0,
+        "y": 810,
+        "s": "Báo cáo",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 332.5,
+        "y": 777,
+        "s": "≡",
+        "size": 20,
+        "c": "#647985",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 309.5,
+        "y": 810,
+        "s": "Lịch sử",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 172,
+        "w": 350,
+        "h": 42,
+        "c": "#E1E9ED",
+        "r": 12,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 195,
+        "y": 176,
+        "w": 171,
+        "h": 34,
+        "c": "#FFFFFF",
+        "r": 10,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 70,
+        "y": 185,
+        "s": "Nhập kho",
+        "size": 14,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 245,
+        "y": 185,
+        "s": "Xuất kho",
+        "size": 14,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 230,
+        "s": "Khách hàng",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 252,
+        "w": 350,
+        "h": 46,
+        "c": "#FFFFFF",
+        "r": 12,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 34,
+        "y": 267,
+        "s": "Chị Lan  ›",
+        "size": 14,
+        "c": "#172B36",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 310,
+        "s": "Ngày lập phiếu",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 332,
+        "w": 350,
+        "h": 46,
+        "c": "#FFFFFF",
+        "r": 12,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 34,
+        "y": 347,
+        "s": "16/10/2026  v",
+        "size": 14,
+        "c": "#172B36",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 397,
+        "s": "Sản phẩm (2)",
+        "size": 17,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 294,
+        "y": 399,
+        "s": "+ Thêm",
+        "size": 12,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 430,
+        "w": 350,
+        "h": 74,
+        "c": "#FFFFFF",
+        "r": 20,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 444,
+        "s": "Nước suối 500ml",
+        "size": 15,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 473,
+        "s": "10 chai × 5.000 đ",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 277,
+        "y": 473,
+        "s": "50.000 đ",
+        "size": 13,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 338,
+        "y": 443,
+        "s": "×",
+        "size": 16,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 516,
+        "w": 350,
+        "h": 74,
+        "c": "#FFFFFF",
+        "r": 20,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 530,
+        "s": "Bánh quy bơ",
+        "size": 15,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 559,
+        "s": "2 hộp × 25.000 đ",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 277,
+        "y": 559,
+        "s": "50.000 đ",
+        "size": 13,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 338,
+        "y": 529,
+        "s": "×",
+        "size": 16,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 611,
+        "s": "+ Thêm ghi chú",
+        "size": 13,
+        "c": "#087F72",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 650,
+        "s": "Tổng tiền",
+        "size": 14,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 245,
+        "y": 645,
+        "s": "100.000 đ",
+        "size": 22,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 698,
+        "w": 350,
+        "h": 48,
+        "c": "#087F72",
+        "r": 14,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 713,
+        "s": "Lưu phiếu xuất",
+        "size": 15,
+        "c": "#FFFFFF",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "name": "05 - Doi tac",
+    "nodes": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 844,
+        "c": "#F3F6F8",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 22,
+        "y": 12,
+        "s": "9:41",
+        "size": 12,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 306,
+        "y": 12,
+        "s": "LTE  100%",
+        "size": 11,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 44,
+        "w": 28,
+        "h": 28,
+        "c": "#087F72",
+        "r": 8,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 27,
+        "y": 49,
+        "s": "S",
+        "size": 18,
+        "c": "#FFFFFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 58,
+        "y": 48,
+        "s": "SmartStock",
+        "size": 18,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 327,
+        "y": 49,
+        "s": "•••",
+        "size": 18,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 98,
+        "s": "Đối tác",
+        "size": 26,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 136,
+        "s": "Khách hàng và nhà cung cấp",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 176,
+        "s": "TÌM KIẾM",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 198,
+        "w": 350,
+        "h": 46,
+        "c": "#FFFFFF",
+        "r": 12,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 34,
+        "y": 213,
+        "s": "Tìm tên hoặc số điện thoại…",
+        "size": 14,
+        "c": "#172B36",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 258,
+        "w": 72,
+        "h": 32,
+        "c": "#DDF3EE",
+        "r": 16,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 35,
+        "y": 267,
+        "s": "Tất cả",
+        "size": 12,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 111,
+        "y": 267,
+        "s": "Khách hàng",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 237,
+        "y": 267,
+        "s": "Nhà cung cấp",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 314,
+        "w": 350,
+        "h": 102,
+        "c": "#FFFFFF",
+        "r": 20,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "rect",
+        "x": 36,
+        "y": 330,
+        "w": 44,
+        "h": 44,
+        "c": "#DDF3EE",
+        "r": 22,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 47,
+        "y": 343,
+        "s": "AP",
+        "size": 15,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 94,
+        "y": 332,
+        "s": "Công ty An Phát",
+        "size": 16,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 94,
+        "y": 359,
+        "s": "0900 000 101",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 391,
+        "s": "Nhà cung cấp",
+        "size": 12,
+        "c": "#087F72",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 265,
+        "y": 391,
+        "s": "Xem phiếu  ›",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 432,
+        "w": 350,
+        "h": 102,
+        "c": "#FFFFFF",
+        "r": 20,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "rect",
+        "x": 36,
+        "y": 448,
+        "w": 44,
+        "h": 44,
+        "c": "#DDF3EE",
+        "r": 22,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 47,
+        "y": 461,
+        "s": "L",
+        "size": 15,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 94,
+        "y": 450,
+        "s": "Chị Lan",
+        "size": 16,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 94,
+        "y": 477,
+        "s": "0900 000 202",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 509,
+        "s": "Khách hàng",
+        "size": 12,
+        "c": "#087F72",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 265,
+        "y": 509,
+        "s": "Xem phiếu  ›",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 550,
+        "w": 350,
+        "h": 102,
+        "c": "#FFFFFF",
+        "r": 20,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "rect",
+        "x": 36,
+        "y": 566,
+        "w": 44,
+        "h": 44,
+        "c": "#DDF3EE",
+        "r": 22,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 47,
+        "y": 579,
+        "s": "MA",
+        "size": 15,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 94,
+        "y": 568,
+        "s": "Cửa hàng Minh Anh",
+        "size": 16,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 94,
+        "y": 595,
+        "s": "0900 000 303",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 627,
+        "s": "Khách hàng",
+        "size": 12,
+        "c": "#087F72",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 265,
+        "y": 627,
+        "s": "Xem phiếu  ›",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 706,
+        "w": 350,
+        "h": 48,
+        "c": "#087F72",
+        "r": 14,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 721,
+        "s": "+  Thêm đối tác",
+        "size": 15,
+        "c": "#FFFFFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 778,
+        "s": "‹  Trở về tổng quan",
+        "size": 14,
+        "c": "#087F72",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "name": "06 - Lich su",
+    "nodes": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 844,
+        "c": "#F3F6F8",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 22,
+        "y": 12,
+        "s": "9:41",
+        "size": 12,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 306,
+        "y": 12,
+        "s": "LTE  100%",
+        "size": 11,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 44,
+        "w": 28,
+        "h": 28,
+        "c": "#087F72",
+        "r": 8,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 27,
+        "y": 49,
+        "s": "S",
+        "size": 18,
+        "c": "#FFFFFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 58,
+        "y": 48,
+        "s": "SmartStock",
+        "size": 18,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 327,
+        "y": 49,
+        "s": "•••",
+        "size": 18,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 98,
+        "s": "Lịch sử phiếu",
+        "size": 26,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 136,
+        "s": "Tra cứu các lần nhập và xuất kho",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 766,
+        "w": 390,
+        "h": 78,
+        "c": "#FFFFFF",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 766,
+        "w": 390,
+        "h": 1,
+        "c": "#E1E9ED",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 40.0,
+        "y": 777,
+        "s": "⌂",
+        "size": 20,
+        "c": "#647985",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 17.0,
+        "y": 810,
+        "s": "Trang chủ",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 137.5,
+        "y": 777,
+        "s": "↕",
+        "size": 20,
+        "c": "#647985",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 114.5,
+        "y": 810,
+        "s": "Nhập–xuất",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 235.0,
+        "y": 777,
+        "s": "",
+        "size": 20,
+        "c": "#647985",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 233.0,
+        "y": 790,
+        "w": 4,
+        "h": 9,
+        "c": "#647985",
+        "r": 1,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 239.0,
+        "y": 782,
+        "w": 4,
+        "h": 17,
+        "c": "#647985",
+        "r": 1,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 245.0,
+        "y": 786,
+        "w": 4,
+        "h": 13,
+        "c": "#647985",
+        "r": 1,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 212.0,
+        "y": 810,
+        "s": "Báo cáo",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 315.5,
+        "y": 774,
+        "w": 52,
+        "h": 28,
+        "c": "#DDF3EE",
+        "r": 14,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 332.5,
+        "y": 777,
+        "s": "≡",
+        "size": 20,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 309.5,
+        "y": 810,
+        "s": "Lịch sử",
+        "size": 12,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 176,
+        "s": "TÌM PHIẾU",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 198,
+        "w": 350,
+        "h": 46,
+        "c": "#FFFFFF",
+        "r": 12,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 34,
+        "y": 213,
+        "s": "Mã phiếu, sản phẩm, đối tác…",
+        "size": 14,
+        "c": "#172B36",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 258,
+        "w": 350,
+        "h": 40,
+        "c": "#FFFFFF",
+        "r": 12,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 35,
+        "y": 271,
+        "s": "Tháng 10, 2026",
+        "size": 13,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 255,
+        "y": 271,
+        "s": "Tất cả  v",
+        "size": 13,
+        "c": "#087F72",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 321,
+        "s": "Hôm nay",
+        "size": 17,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 354,
+        "w": 350,
+        "h": 230,
+        "c": "#FFFFFF",
+        "r": 20,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "rect",
+        "x": 36,
+        "y": 370,
+        "w": 72,
+        "h": 26,
+        "c": "#DDF3EE",
+        "r": 8,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 47,
+        "y": 377,
+        "s": "Nhập kho",
+        "size": 11,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 233,
+        "y": 376,
+        "s": "NK-161026-01",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 413,
+        "s": "Công ty An Phát",
+        "size": 18,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 441,
+        "s": "09:30 · 2 sản phẩm",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 477,
+        "s": "Nước suối 500ml × 50",
+        "size": 13,
+        "c": "#172B36",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 504,
+        "s": "Bánh quy bơ × 20",
+        "size": 13,
+        "c": "#172B36",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 36,
+        "y": 533,
+        "w": 318,
+        "h": 1,
+        "c": "#E1E9ED",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 551,
+        "s": "Tổng tiền",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 263,
+        "y": 548,
+        "s": "510.000 đ",
+        "size": 16,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 600,
+        "w": 350,
+        "h": 128,
+        "c": "#FFFFFF",
+        "r": 20,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "rect",
+        "x": 36,
+        "y": 616,
+        "w": 72,
+        "h": 26,
+        "c": "#FFF0E9",
+        "r": 8,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 47,
+        "y": 623,
+        "s": "Xuất kho",
+        "size": 11,
+        "c": "#D96545",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 233,
+        "y": 622,
+        "s": "XK-161026-01",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 657,
+        "s": "Chị Lan",
+        "size": 18,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 693,
+        "s": "10:15 · 2 sản phẩm",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 263,
+        "y": 691,
+        "s": "100.000 đ",
+        "size": 16,
+        "c": "#D96545",
+        "bold": true
+      }
+    ]
+  },
+  {
+    "name": "07 - Bao cao",
+    "nodes": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 844,
+        "c": "#F3F6F8",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 22,
+        "y": 12,
+        "s": "9:41",
+        "size": 12,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 306,
+        "y": 12,
+        "s": "LTE  100%",
+        "size": 11,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 44,
+        "w": 28,
+        "h": 28,
+        "c": "#087F72",
+        "r": 8,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 27,
+        "y": 49,
+        "s": "S",
+        "size": 18,
+        "c": "#FFFFFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 58,
+        "y": 48,
+        "s": "SmartStock",
+        "size": 18,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 327,
+        "y": 49,
+        "s": "•••",
+        "size": 18,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 98,
+        "s": "Báo cáo kho",
+        "size": 26,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 136,
+        "s": "Theo dõi giá trị nhập và xuất",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 766,
+        "w": 390,
+        "h": 78,
+        "c": "#FFFFFF",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 766,
+        "w": 390,
+        "h": 1,
+        "c": "#E1E9ED",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 40.0,
+        "y": 777,
+        "s": "⌂",
+        "size": 20,
+        "c": "#647985",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 17.0,
+        "y": 810,
+        "s": "Trang chủ",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 137.5,
+        "y": 777,
+        "s": "↕",
+        "size": 20,
+        "c": "#647985",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 114.5,
+        "y": 810,
+        "s": "Nhập–xuất",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 218.0,
+        "y": 774,
+        "w": 52,
+        "h": 28,
+        "c": "#DDF3EE",
+        "r": 14,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 235.0,
+        "y": 777,
+        "s": "",
+        "size": 20,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 233.0,
+        "y": 790,
+        "w": 4,
+        "h": 9,
+        "c": "#087F72",
+        "r": 1,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 239.0,
+        "y": 782,
+        "w": 4,
+        "h": 17,
+        "c": "#087F72",
+        "r": 1,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 245.0,
+        "y": 786,
+        "w": 4,
+        "h": 13,
+        "c": "#087F72",
+        "r": 1,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 212.0,
+        "y": 810,
+        "s": "Báo cáo",
+        "size": 12,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 332.5,
+        "y": 777,
+        "s": "≡",
+        "size": 20,
+        "c": "#647985",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 309.5,
+        "y": 810,
+        "s": "Lịch sử",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 174,
+        "w": 350,
+        "h": 42,
+        "c": "#FFFFFF",
+        "r": 12,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 188,
+        "s": "‹",
+        "size": 14,
+        "c": "#087F72",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 128,
+        "y": 188,
+        "s": "Tháng 10, 2026",
+        "size": 14,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 341,
+        "y": 188,
+        "s": "›",
+        "size": 14,
+        "c": "#087F72",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 230,
+        "w": 169,
+        "h": 90,
+        "c": "#FFFFFF",
+        "r": 16,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 247,
+        "s": "Giá trị nhập",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 274,
+        "s": "12,5 triệu",
+        "size": 22,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 201,
+        "y": 230,
+        "w": 169,
+        "h": 90,
+        "c": "#FFFFFF",
+        "r": 16,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 217,
+        "y": 247,
+        "s": "Giá trị xuất",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 217,
+        "y": 274,
+        "s": "8,2 triệu",
+        "size": 22,
+        "c": "#D96545",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 340,
+        "w": 350,
+        "h": 242,
+        "c": "#FFFFFF",
+        "r": 20,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 359,
+        "s": "Nhập – xuất theo tuần",
+        "size": 17,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 390,
+        "s": "● Nhập",
+        "size": 12,
+        "c": "#087F72",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 117,
+        "y": 390,
+        "s": "● Xuất",
+        "size": 12,
+        "c": "#D96545",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 269,
+        "y": 391,
+        "s": "Triệu đồng",
+        "size": 11,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 77,
+        "y": 472,
+        "w": 22,
+        "h": 66,
+        "c": "#087F72",
+        "r": 4,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 105,
+        "y": 494,
+        "w": 22,
+        "h": 44,
+        "c": "#D96545",
+        "r": 4,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 81,
+        "y": 549,
+        "s": "Tuần 1",
+        "size": 11,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 179,
+        "y": 439.0,
+        "w": 22,
+        "h": 99.0,
+        "c": "#087F72",
+        "r": 4,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 207,
+        "y": 472,
+        "w": 22,
+        "h": 66,
+        "c": "#D96545",
+        "r": 4,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 183,
+        "y": 549,
+        "s": "Tuần 2",
+        "size": 11,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 281,
+        "y": 428,
+        "w": 22,
+        "h": 110,
+        "c": "#087F72",
+        "r": 4,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 309,
+        "y": 467.6,
+        "w": 22,
+        "h": 70.4,
+        "c": "#D96545",
+        "r": 4,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 285,
+        "y": 549,
+        "s": "Tuần 3",
+        "size": 11,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 598,
+        "w": 350,
+        "h": 130,
+        "c": "#FFFFFF",
+        "r": 20,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 616,
+        "s": "Chênh lệch nhập – xuất",
+        "size": 15,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 644,
+        "s": "+4.300.000 đ",
+        "size": 24,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 688,
+        "s": "Chênh lệch giá trị, không phải lợi nhuận.",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "name": "08 - Tro ly AI",
+    "nodes": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 844,
+        "c": "#F3F6F8",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 22,
+        "y": 12,
+        "s": "9:41",
+        "size": 12,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 306,
+        "y": 12,
+        "s": "LTE  100%",
+        "size": 11,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 44,
+        "w": 28,
+        "h": 28,
+        "c": "#087F72",
+        "r": 8,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 27,
+        "y": 49,
+        "s": "S",
+        "size": 18,
+        "c": "#FFFFFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 58,
+        "y": 48,
+        "s": "SmartStock",
+        "size": 18,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 327,
+        "y": 49,
+        "s": "•••",
+        "size": 18,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 98,
+        "s": "Trợ lý kho AI",
+        "size": 26,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 136,
+        "s": "Nhập – xuất nhanh bằng tin nhắn",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 174,
+        "w": 350,
+        "h": 54,
+        "c": "#DDF3EE",
+        "r": 14,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 34,
+        "y": 186,
+        "s": "AI sẽ hỏi thêm khi thiếu giá hoặc đối tác.",
+        "size": 12,
+        "c": "#087F72",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 34,
+        "y": 205,
+        "s": "Tồn kho chỉ đổi khi đủ thông tin.",
+        "size": 12,
+        "c": "#087F72",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 68,
+        "y": 252,
+        "w": 302,
+        "h": 76,
+        "c": "#087F72",
+        "r": 18,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 84,
+        "y": 269,
+        "s": "Xuất 10 chai nước suối 500ml,",
+        "size": 14,
+        "c": "#FFFFFF",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 84,
+        "y": 294,
+        "s": "giá 5.000 đồng mỗi chai.",
+        "size": 14,
+        "c": "#FFFFFF",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 353,
+        "s": "SMARTSTOCK AI",
+        "size": 11,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 375,
+        "w": 320,
+        "h": 102,
+        "c": "#FFFFFF",
+        "r": 18,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 392,
+        "s": "Bạn bán cho khách hàng nào?",
+        "size": 15,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 419,
+        "s": "Hãy gửi tên, số điện thoại hoặc",
+        "size": 14,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 443,
+        "s": "mã khách hàng đã lưu.",
+        "size": 14,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 246,
+        "y": 499,
+        "w": 124,
+        "h": 48,
+        "c": "#087F72",
+        "r": 16,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 263,
+        "y": 515,
+        "s": "Khách Chị Lan",
+        "size": 14,
+        "c": "#FFFFFF",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 574,
+        "w": 320,
+        "h": 128,
+        "c": "#FFFFFF",
+        "r": 18,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 590,
+        "s": "Đã ghi nhận xuất kho",
+        "size": 16,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 619,
+        "s": "10 chai Nước suối 500ml",
+        "size": 14,
+        "c": "#172B36",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 644,
+        "s": "Khách hàng: Chị Lan",
+        "size": 14,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 672,
+        "s": "Tổng tiền: 50.000 đ",
+        "size": 14,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 744,
+        "w": 294,
+        "h": 54,
+        "c": "#FFFFFF",
+        "r": 16,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 763,
+        "s": "Nhập tin nhắn…",
+        "size": 14,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 326,
+        "y": 744,
+        "w": 44,
+        "h": 54,
+        "c": "#087F72",
+        "r": 16,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 339,
+        "y": 759,
+        "s": "↑",
+        "size": 24,
+        "c": "#FFFFFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 817,
+        "s": "‹  Trở về tổng quan",
+        "size": 12,
+        "c": "#087F72",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "name": "09 - Cai dat",
+    "nodes": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 844,
+        "c": "#F3F6F8",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 22,
+        "y": 12,
+        "s": "9:41",
+        "size": 12,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 306,
+        "y": 12,
+        "s": "LTE  100%",
+        "size": 11,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 44,
+        "w": 28,
+        "h": 28,
+        "c": "#087F72",
+        "r": 8,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 27,
+        "y": 49,
+        "s": "S",
+        "size": 18,
+        "c": "#FFFFFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 58,
+        "y": 48,
+        "s": "SmartStock",
+        "size": 18,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 327,
+        "y": 49,
+        "s": "•••",
+        "size": 18,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 98,
+        "s": "Cài đặt",
+        "size": 26,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 136,
+        "s": "Bảo mật và dữ liệu của bạn",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 184,
+        "s": "Bảo mật",
+        "size": 17,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 218,
+        "w": 350,
+        "h": 162,
+        "c": "#FFFFFF",
+        "r": 20,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 239,
+        "s": "Khóa bằng mã PIN",
+        "size": 16,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 266,
+        "s": "Yêu cầu mã khi mở ứng dụng",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 304,
+        "y": 241,
+        "w": 48,
+        "h": 26,
+        "c": "#087F72",
+        "r": 13,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 328,
+        "y": 244,
+        "w": 20,
+        "h": 20,
+        "c": "#FFFFFF",
+        "r": 10,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 36,
+        "y": 298,
+        "w": 318,
+        "h": 1,
+        "c": "#E1E9ED",
+        "r": 0,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 317,
+        "s": "Đăng nhập vân tay",
+        "size": 16,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 345,
+        "s": "Dùng cảm biến của thiết bị",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 304,
+        "y": 322,
+        "w": 48,
+        "h": 26,
+        "c": "#E1E9ED",
+        "r": 13,
+        "stroke": null
+      },
+      {
+        "kind": "rect",
+        "x": 308,
+        "y": 325,
+        "w": 20,
+        "h": 20,
+        "c": "#FFFFFF",
+        "r": 10,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 411,
+        "s": "Dữ liệu",
+        "size": 17,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 446,
+        "w": 350,
+        "h": 88,
+        "c": "#FFFFFF",
+        "r": 20,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 466,
+        "s": "Xuất dữ liệu Excel",
+        "size": 16,
+        "c": "#172B36",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 494,
+        "s": "Lưu danh sách và giao dịch về máy",
+        "size": 12,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "x": 339,
+        "y": 478,
+        "s": "›",
+        "size": 20,
+        "c": "#087F72",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 560,
+        "w": 350,
+        "h": 95,
+        "c": "#FFFFFF",
+        "r": 20,
+        "stroke": "#E1E9ED"
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 579,
+        "s": "SmartStock",
+        "size": 18,
+        "c": "#087F72",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 610,
+        "s": "Quản lý kho đơn giản, rõ ràng.",
+        "size": 13,
+        "c": "#647985",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 20,
+        "y": 706,
+        "w": 350,
+        "h": 48,
+        "c": "#087F72",
+        "r": 14,
+        "stroke": null
+      },
+      {
+        "kind": "text",
+        "x": 36,
+        "y": 721,
+        "s": "Lưu cài đặt",
+        "size": 15,
+        "c": "#FFFFFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "x": 20,
+        "y": 778,
+        "s": "Hủy và trở về",
+        "size": 14,
+        "c": "#647985",
+        "bold": false
+      }
+    ]
+  }
+]

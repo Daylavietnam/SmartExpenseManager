@@ -9,6 +9,8 @@ import java.util.List;
 public interface ProductDao {
     @Query("SELECT * FROM products ORDER BY name COLLATE NOCASE")
     LiveData<List<Product>> observeAll();
+    @Query("SELECT * FROM products ORDER BY name COLLATE NOCASE")
+    List<Product> getAllForExport();
     @Query("SELECT * FROM products WHERE id = :id") Product find(int id);
     @Insert long insert(Product product);
     @Update void update(Product product);

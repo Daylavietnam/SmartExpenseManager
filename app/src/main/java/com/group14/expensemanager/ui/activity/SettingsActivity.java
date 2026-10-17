@@ -18,14 +18,15 @@ import com.google.android.material.materialswitch.MaterialSwitch;
 import com.group14.expensemanager.R;
 import com.group14.expensemanager.data.TransactionRepository;
 import com.group14.expensemanager.model.Transaction;
-import com.group14.expensemanager.utils.CsvExporter;
+import com.group14.expensemanager.utils.ExcelExporter;
 
 import android.net.Uri;
 import android.content.Intent;
-import androidx.core.content.FileProvider;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 
-import java.io.File;
-import java.util.List;
+import java.io.OutputStream;
+import java.io.IOException;
 import java.util.concurrent.Executor;
 
 
@@ -36,6 +37,10 @@ public class SettingsActivity extends AppCompatActivity {
     private MaterialButton btnExportCsv;
     private SharedPreferences sharedPreferences;
     private boolean isChangingSwitch = false;
+    private final ActivityResultLauncher<String> exportLauncher = registerForActivityResult(
+            new ActivityResultContracts.CreateDocument(ExcelExporter.MIME_TYPE), uri -> {
+                if (uri != null) exportReport(uri);
+            });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,31 +102,41 @@ public class SettingsActivity extends AppCompatActivity {
             finish();
         });
 
-        btnExportCsv.setOnClickListener(v -> {
-            TransactionRepository repository =
-                    TransactionRepository.getInstance(
-                            getApplication()
-                    );
-            repository.getTransactionsForExport(new TransactionRepository.ExportCallback() {
-                        @Override
-                        public void onResult(List<Transaction> transactions) {
-                            File file = CsvExporter.exportToExcel(SettingsActivity.this, transactions);
-                            runOnUiThread(() -> {
-                                Toast.makeText(SettingsActivity.this, file == null ? "Không thể xuất báo cáo kho" : "Đã xuất báo cáo kho", Toast.LENGTH_SHORT).show();
-                                if (file != null && file.exists()) {
-                                    openFile(file);
-                                }
-                            });
-                        }
-                    }
-            );
+        btnExportCsv.setOnClickListener(v -> exportLauncher.launch(ExcelExporter.fileName()));
+    }
+
+    private void exportReport(Uri uri) {
+        btnExportCsv.setEnabled(false);
+        TransactionRepository.getInstance(getApplication()).getWorkbookForExport((transactions, products, loadError) -> {
+            String error = null;
+            try (OutputStream output = getContentResolver().openOutputStream(uri, "wt")) {
+                if (loadError != null) throw new IOException("Không đọc được dữ liệu kho.", loadError);
+                if (output == null) throw new IOException("Không mở được nơi lưu đã chọn.");
+                ExcelExporter.write(output, transactions, products);
+            } catch (Exception e) {
+                android.util.Log.e("StockExport", "Unable to export workbook", e);
+                error = "Không thể lưu file Excel. Hãy kiểm tra dung lượng và chọn lại nơi lưu. File chưa hoàn tất không nên sử dụng.";
+            }
+            String result = error;
+            runOnUiThread(() -> {
+                if (isFinishing() || isDestroyed()) return;
+                btnExportCsv.setEnabled(true);
+                if (result != null) {
+                    new AlertDialog.Builder(this).setTitle("Xuất file thất bại")
+                            .setMessage(result).setPositiveButton("Đóng", null).show();
+                } else {
+                    new AlertDialog.Builder(this).setTitle("Đã xuất Excel")
+                            .setMessage("Đã lưu một trang tính gồm tổng tiền, chênh lệch xuất − nhập, chi tiết Nhập kho, Xuất kho và Hàng tồn (" + products.size() + " sản phẩm) tại vị trí bạn chọn.")
+                            .setPositiveButton("Mở file", (dialog, which) -> openFile(uri))
+                            .setNegativeButton("Đóng", null).show();
+                }
+            });
         });
     }
 
-    private void openFile(File file) {
-        Uri path = FileProvider.getUriForFile(this, getPackageName() + ".fileprovider", file);
+    private void openFile(Uri path) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setDataAndType(path, "application/vnd.ms-excel");
+        intent.setDataAndType(path, ExcelExporter.MIME_TYPE);
         intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         try {
             startActivity(intent);
@@ -251,3 +266,4 @@ public class SettingsActivity extends AppCompatActivity {
         dialog.show();
     }
 }
+

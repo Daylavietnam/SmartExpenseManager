@@ -1,0 +1,5 @@
+Bản phác thảo SmartStock
+
+Kéo SmartStock-phac-thao.svg vào canvas của một file Figma Design để nhập cả 9 màn hình. Hoặc nhập từng SVG riêng.
+Font: Arial Italic (có sẵn trên Windows). Đây là SVG vector, không phải .fig gốc; Figma có thể chuyển chữ thành đường nét hoặc thay font khi nhập. PNG dùng xem trước.
+Nét lệch và màu chì là chủ ý của phong cách phác thảo. Đây là bản nháp thiết kế, chưa phải prototype bấm được.

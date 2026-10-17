@@ -1,0 +1,11 @@
+SMARTSTOCK — BỘ GIAO DIỆN CƠ BẢN
+
+9 màn hình Android 390 × 844. Dữ liệu minh họa.
+
+Cách dùng trong Figma:
+1. Tạo một file Figma Design trống.
+2. Kéo từng file SVG vào canvas, hoặc kéo SmartStock-all-screens.svg để nhập toàn bộ.
+3. Các hình được nhập dưới dạng vector. Figma có thể chuyển chữ SVG thành đường nét; dùng design.json để tham khảo nội dung chữ gốc.
+4. Sau khi nhập, lưu bản sao cục bộ từ menu Figma nếu bạn cần file .fig.
+
+SmartStock-overview.png và preview.html dùng để xem trước. Đây là bộ SVG, không phải file .fig gốc; chưa có prototype tương tác. Không thay đổi mã nguồn ứng dụng.

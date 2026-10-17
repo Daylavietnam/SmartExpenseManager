@@ -273,6 +273,31 @@ public class TransactionRepository {
 
 
 
+    /** Read movements and catalog in one database snapshot, including products with no movements. */
+    public void getWorkbookForExport(WorkbookCallback callback) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            try {
+                ExportSnapshot snapshot = database.runInTransaction(() -> new ExportSnapshot(
+                        transactionDao.getTransactionsForExport(), productDao.getAllForExport()));
+                callback.onResult(snapshot.movements, snapshot.products, null);
+            } catch (Exception e) {
+                callback.onResult(null, null, e);
+            }
+        });
+    }
+
+    private static final class ExportSnapshot {
+        final List<Transaction> movements;
+        final List<com.group14.expensemanager.model.Product> products;
+        ExportSnapshot(List<Transaction> movements, List<com.group14.expensemanager.model.Product> products) {
+            this.movements = movements; this.products = products;
+        }
+    }
+
+    public interface WorkbookCallback {
+        void onResult(List<Transaction> movements, List<com.group14.expensemanager.model.Product> products, Exception error);
+    }
+
     public interface ExportCallback {
 
         void onResult(List<Transaction> transactions);

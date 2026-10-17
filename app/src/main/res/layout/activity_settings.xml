@@ -14,8 +14,8 @@
   <com.google.android.material.card.MaterialCardView style="@style/Stock.Card" android:layout_marginTop="16dp">
    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
     <TextView style="@style/Stock.Subtitle" android:text="DỮ LIỆU" android:textColor="@color/ui_primary" android:letterSpacing="0.08" />
-    <TextView style="@style/Stock.Subtitle" android:layout_marginTop="12dp" android:layout_marginBottom="12dp" android:text="Xuất danh sách sản phẩm và phiếu kho để lưu trữ hoặc chia sẻ." />
-    <com.google.android.material.button.MaterialButton android:id="@+id/btnExportCsv" style="@style/Stock.Button" android:layout_width="match_parent" android:layout_height="56dp" android:text="Xuất dữ liệu kho" />
+    <TextView style="@style/Stock.Subtitle" android:layout_marginTop="12dp" android:layout_marginBottom="12dp" android:text="Xuất Excel (.xlsx) chung một trang: tổng tiền và chênh lệch xuất − nhập, Nhập kho, Xuất kho, Hàng tồn. Số tồn tính từ toàn bộ lịch sử. Bạn có thể chọn thư mục lưu." />
+    <com.google.android.material.button.MaterialButton android:id="@+id/btnExportCsv" style="@style/Stock.Button" android:layout_width="match_parent" android:layout_height="56dp" android:text="Xuất Excel (.xlsx)" />
    </LinearLayout>
   </com.google.android.material.card.MaterialCardView>
   <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="24dp">
@@ -24,3 +24,5 @@
   </LinearLayout>
  </LinearLayout>
 </ScrollView>
+
+
