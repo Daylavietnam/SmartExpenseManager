@@ -1,8 +1,10 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
 }
 
-val localProperties = java.util.Properties().apply {
+val localProperties = Properties().apply {
     val localPropertiesFile = rootProject.file("local.properties")
     if (localPropertiesFile.exists()) {
         localPropertiesFile.inputStream().use { load(it) }

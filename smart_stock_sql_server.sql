@@ -1,13 +1,14 @@
 /*
-    CSDL QuanLyKho — SQL Server / T-SQL
-    Chạy toàn bộ script trong SSMS. Script tạo 8 bảng để thể hiện ERD:
-    NhomHang, SanPham, DoiTac, PhieuKho, LichSuKho,
-    BaoCaoKho, CaiDatBaoMat, TinNhanAI.
+    CSDL QuanLyKho - SQL Server / T-SQL
+    Phien ban chinh sua mo hinh lich su nhap-xuat.
+    Tao database moi QuanLyKho_LichSuPhieu_v2 de khong sua/xoa database cu.
+    PhieuKho la phan dau phieu; LichSuKho la cac dong san pham trong phieu.
+    Chay toan bo file trong SSMS.
 */
-
-IF DB_ID(N'QuanLyKho_GopPhieu') IS NULL CREATE DATABASE QuanLyKho_GopPhieu;
+IF DB_ID(N'QuanLyKho_LichSuPhieu_v2') IS NULL
+    EXEC(N'CREATE DATABASE [QuanLyKho_LichSuPhieu_v2]');
 GO
-USE QuanLyKho_GopPhieu;
+USE [QuanLyKho_LichSuPhieu_v2];
 GO
 
 IF OBJECT_ID(N'dbo.NhomHang', N'U') IS NULL
@@ -51,6 +52,7 @@ BEGIN
 END;
 GO
 
+/* Mot dong dau phieu cho moi phieu nhap hoac xuat. */
 IF OBJECT_ID(N'dbo.PhieuKho', N'U') IS NULL
 BEGIN
     CREATE TABLE dbo.PhieuKho (
@@ -58,10 +60,23 @@ BEGIN
         SoPhieu NVARCHAR(100) NOT NULL,
         LoaiPhieu NVARCHAR(20) NOT NULL,
         ThoiGianUnixMs BIGINT NOT NULL,
-        MaDoiTac INT NULL, -- Nhà cung cấp khi nhập; khách hàng khi xuất
+        MaDoiTac INT NULL,
         TenDoiTacLuu NVARCHAR(200) NOT NULL CONSTRAINT DF_PhieuKho_TenDoiTac DEFAULT (N''),
         DienThoaiLuu NVARCHAR(30) NOT NULL CONSTRAINT DF_PhieuKho_DienThoai DEFAULT (N''),
         GhiChu NVARCHAR(1000) NOT NULL CONSTRAINT DF_PhieuKho_GhiChu DEFAULT (N''),
+        CONSTRAINT UQ_PhieuKho_SoPhieu UNIQUE (SoPhieu),
+        CONSTRAINT CK_PhieuKho_Loai CHECK (LoaiPhieu IN (N'income', N'expense')),
+        CONSTRAINT FK_PhieuKho_DoiTac FOREIGN KEY (MaDoiTac) REFERENCES dbo.DoiTac(MaDoiTac)
+    );
+END;
+GO
+
+/* Moi dong LichSuKho la mot san pham tren phieu; cac dong cung MaPhieuKho la mot phieu. */
+IF OBJECT_ID(N'dbo.LichSuKho', N'U') IS NULL
+BEGIN
+    CREATE TABLE dbo.LichSuKho (
+        MaLichSu INT IDENTITY(1,1) NOT NULL CONSTRAINT PK_LichSuKho PRIMARY KEY,
+        MaPhieuKho INT NOT NULL,
         MaSanPham INT NOT NULL,
         MaHangLuu NVARCHAR(50) NOT NULL,
         TenSanPhamLuu NVARCHAR(200) NOT NULL,
@@ -69,10 +84,9 @@ BEGIN
         SoLuong DECIMAL(18,3) NOT NULL,
         DonGia DECIMAL(18,2) NOT NULL,
         ThanhTien DECIMAL(18,2) NOT NULL,
-        CONSTRAINT CK_PhieuKho_Loai CHECK (LoaiPhieu IN (N'income', N'expense')),
-        CONSTRAINT CK_PhieuKho_SoLieu CHECK (SoLuong > 0 AND DonGia >= 0 AND ThanhTien >= 0),
-        CONSTRAINT FK_PhieuKho_DoiTac FOREIGN KEY (MaDoiTac) REFERENCES dbo.DoiTac(MaDoiTac),
-        CONSTRAINT FK_PhieuKho_SanPham FOREIGN KEY (MaSanPham) REFERENCES dbo.SanPham(MaSanPham)
+        CONSTRAINT CK_LichSuKho_SoLieu CHECK (SoLuong > 0 AND DonGia >= 0 AND ThanhTien >= 0),
+        CONSTRAINT FK_LichSuKho_PhieuKho FOREIGN KEY (MaPhieuKho) REFERENCES dbo.PhieuKho(MaPhieuKho),
+        CONSTRAINT FK_LichSuKho_SanPham FOREIGN KEY (MaSanPham) REFERENCES dbo.SanPham(MaSanPham)
     );
 END;
 GO
@@ -82,24 +96,9 @@ BEGIN
     CREATE TABLE dbo.TinNhanAI (
         MaTinNhan INT IDENTITY(1,1) NOT NULL CONSTRAINT PK_TinNhanAI PRIMARY KEY,
         NoiDung NVARCHAR(MAX) NULL,
-        LoaiNguoiGui INT NOT NULL, -- 0 = AI, 1 = người dùng
-        ThoiGianUnixMs BIGINT NOT NULL
-    );
-END;
-GO
-
-IF OBJECT_ID(N'dbo.LichSuKho', N'U') IS NULL
-BEGIN
-    CREATE TABLE dbo.LichSuKho (
-        MaLichSu INT IDENTITY(1,1) NOT NULL CONSTRAINT PK_LichSuKho PRIMARY KEY,
-        SoPhieu NVARCHAR(100) NULL,
-        MaSanPham INT NULL,
-        MaDoiTac INT NULL,
-        LoaiThaoTac NVARCHAR(30) NOT NULL, -- tao_phieu, sua_phieu, xoa_phieu
-        MoTa NVARCHAR(1000) NOT NULL,
+        LoaiNguoiGui INT NOT NULL,
         ThoiGianUnixMs BIGINT NOT NULL,
-        CONSTRAINT FK_LichSu_SanPham FOREIGN KEY (MaSanPham) REFERENCES dbo.SanPham(MaSanPham),
-        CONSTRAINT FK_LichSu_DoiTac FOREIGN KEY (MaDoiTac) REFERENCES dbo.DoiTac(MaDoiTac)
+        CONSTRAINT CK_TinNhanAI_NguoiGui CHECK (LoaiNguoiGui IN (0,1))
     );
 END;
 GO
@@ -126,7 +125,7 @@ BEGIN
     CREATE TABLE dbo.CaiDatBaoMat (
         MaCaiDat INT NOT NULL CONSTRAINT PK_CaiDatBaoMat PRIMARY KEY,
         BatKhoaPIN BIT NOT NULL CONSTRAINT DF_CaiDat_BatPIN DEFAULT (0),
-        MaPINHash NVARCHAR(256) NULL, -- chỉ lưu mã PIN đã băm, không lưu PIN thô
+        MaPINHash NVARCHAR(256) NULL,
         BatKhoaVanTay BIT NOT NULL CONSTRAINT DF_CaiDat_VanTay DEFAULT (0),
         KhoaKhiMoUngDung BIT NOT NULL CONSTRAINT DF_CaiDat_KhiMo DEFAULT (0),
         SoPhutTuDongKhoa INT NULL,
@@ -140,17 +139,27 @@ GO
 IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name=N'IX_PhieuKho_MaDoiTac' AND object_id=OBJECT_ID(N'dbo.PhieuKho'))
     CREATE INDEX IX_PhieuKho_MaDoiTac ON dbo.PhieuKho(MaDoiTac);
 GO
-IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name=N'IX_PhieuKho_SoPhieu' AND object_id=OBJECT_ID(N'dbo.PhieuKho'))
-    CREATE INDEX IX_PhieuKho_SoPhieu ON dbo.PhieuKho(SoPhieu);
+IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name=N'IX_PhieuKho_ThoiGian' AND object_id=OBJECT_ID(N'dbo.PhieuKho'))
+    CREATE INDEX IX_PhieuKho_ThoiGian ON dbo.PhieuKho(ThoiGianUnixMs);
 GO
-IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name=N'IX_PhieuKho_MaSanPham' AND object_id=OBJECT_ID(N'dbo.PhieuKho'))
-    CREATE INDEX IX_PhieuKho_MaSanPham ON dbo.PhieuKho(MaSanPham);
+IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name=N'IX_LichSuKho_MaPhieuKho' AND object_id=OBJECT_ID(N'dbo.LichSuKho'))
+    CREATE INDEX IX_LichSuKho_MaPhieuKho ON dbo.LichSuKho(MaPhieuKho);
 GO
-IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name=N'IX_LichSu_ThoiGian' AND object_id=OBJECT_ID(N'dbo.LichSuKho'))
-    CREATE INDEX IX_LichSu_ThoiGian ON dbo.LichSuKho(ThoiGianUnixMs);
+IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name=N'IX_LichSuKho_MaSanPham' AND object_id=OBJECT_ID(N'dbo.LichSuKho'))
+    CREATE INDEX IX_LichSuKho_MaSanPham ON dbo.LichSuKho(MaSanPham);
 GO
 
-/* BaoCaoKho lưu bản chụp báo cáo; báo cáo hiện tại của ứng dụng thực tế được tính từ phiếu kho. */
-/* Mỗi dòng PhieuKho là một sản phẩm; các dòng cùng phiếu dùng chung SoPhieu. */
-/* Tổng phiếu tính bằng SUM(ThanhTien) theo SoPhieu. */
-/* Trong SSMS: Databases > QuanLyKho_GopPhieu > Database Diagrams > New Database Diagram, chọn cả 8 bảng. */
+/* Tong tien phieu va tong nhap/xuat tren man hinh lich su duoc tinh tu cac dong LichSuKho. */
+CREATE OR ALTER VIEW dbo.vw_LichSuNhapXuat AS
+SELECT
+    p.MaPhieuKho, p.SoPhieu, p.LoaiPhieu, p.ThoiGianUnixMs,
+    p.MaDoiTac, p.TenDoiTacLuu, p.DienThoaiLuu, p.GhiChu,
+    l.MaLichSu, l.MaSanPham, l.MaHangLuu, l.TenSanPhamLuu, l.DonViTinhLuu,
+    l.SoLuong, l.DonGia, l.ThanhTien,
+    SUM(l.ThanhTien) OVER (PARTITION BY p.MaPhieuKho) AS TongTienPhieu,
+    COUNT_BIG(l.MaLichSu) OVER (PARTITION BY p.MaPhieuKho) AS SoDongHang
+FROM dbo.PhieuKho AS p
+LEFT JOIN dbo.LichSuKho AS l ON l.MaPhieuKho = p.MaPhieuKho;
+GO
+
+/* De tao ERD trong SSMS: Database Diagrams > New Database Diagram, chon 8 bang. */
