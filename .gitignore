@@ -12,4 +12,7 @@
 /captures
 .externalNativeBuild
 .cxx
-local.properties
+/.artifacts
+QuanLyKho_SQLServer_MOI.sql
+smart_stock_schema.sql
+smart_stock_sql_server

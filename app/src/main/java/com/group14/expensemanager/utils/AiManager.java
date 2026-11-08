@@ -1,5 +1,7 @@
 package com.group14.expensemanager.utils;
 
+import com.group14.expensemanager.BuildConfig;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -15,10 +17,9 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class AiManager {
-    private static final String API_KEY = "AQ.Ab8RN6KRnMtGWWt-8wAUje4ztrMvt7t-xpdS8JXLwefl8-Y2HA";
     private static final String MODEL_NAME = "gemini-3.5-flash";
     
-    private static final String BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models/" + MODEL_NAME + ":generateContent?key=" + API_KEY;
+    private static final String BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models/" + MODEL_NAME + ":generateContent";
 
     private static final OkHttpClient client = new OkHttpClient.Builder()
             .connectTimeout(30, TimeUnit.SECONDS)
@@ -52,6 +53,7 @@ public class AiManager {
 
             Request request = new Request.Builder()
                     .url(BASE_URL)
+                    .addHeader("x-goog-api-key", BuildConfig.GEMINI_API_KEY)
                     .post(body)
                     .build();
 

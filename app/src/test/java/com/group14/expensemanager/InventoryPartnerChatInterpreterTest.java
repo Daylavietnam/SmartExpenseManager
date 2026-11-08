@@ -10,9 +10,11 @@ public class InventoryPartnerChatInterpreterTest {
     private Partner partner(int id,String name,String type,String phone) { Partner p=new Partner();p.id=id;p.name=name;p.type=type;p.phone=phone;return p; }
     private List<Partner> partners() { return Arrays.asList(partner(1,"Công ty An Nam",Partner.SUPPLIER,"0900123456"),partner(2,"Chị Lan",Partner.CUSTOMER,"0912345678")); }
     private InventoryPartnerChatInterpreter.Result parse(String text,InventoryChatInterpreter.Draft pending) { return InventoryPartnerChatInterpreter.interpret(text,Collections.singletonList(product()),partners(),pending); }
-    @Test public void receiptWaitsForSupplierThenResolvesPhoneWithoutChangingQuantity() {
-        InventoryPartnerChatInterpreter.Result first=parse("nhập 10 KH001",null);assertFalse(first.ready());assertTrue(first.reply.contains("nhà cung cấp"));
-        InventoryPartnerChatInterpreter.Result done=parse("0900123456",first.draft);assertTrue(done.ready());assertEquals(1,done.draft.partnerId);assertEquals(10,done.draft.quantity,0);
+    @Test public void receiptDoesNotRequireSupplierButResolvesOneWhenProvided() {
+        InventoryPartnerChatInterpreter.Result withoutPartner=parse("nhập 10 KH001",null);
+        assertTrue(withoutPartner.ready());assertEquals(0,withoutPartner.draft.partnerId);
+        InventoryPartnerChatInterpreter.Result done=parse("nhập 10 KH001 nhà cung cấp Công ty An Nam",null);
+        assertTrue(done.ready());assertEquals(1,done.draft.partnerId);assertEquals(10,done.draft.quantity,0);
     }
     @Test public void issueAsksPriceThenCustomerAndKeepsPrice() {
         InventoryPartnerChatInterpreter.Result price=parse("xuất 3 KH001",null);assertFalse(price.ready());assertTrue(price.reply.contains("đơn giá"));
@@ -44,12 +46,11 @@ public class InventoryPartnerChatInterpreterTest {
     }
     @Test public void emptyCatalogKeepsDraftUntilPartnerIsCreated() {
         InventoryPartnerChatInterpreter.Result empty=InventoryPartnerChatInterpreter.interpret("nhập 2 KH001",Collections.singletonList(product()),Collections.emptyList(),null);
-        assertFalse(empty.ready());assertTrue(empty.reply.contains("Chưa có nhà cung cấp"));
-        assertTrue(parse("Công ty An Nam",empty.draft).ready());
+        assertTrue(empty.ready());assertEquals(0,empty.draft.partnerId);
     }
     @Test public void fullPartnerNameMayContainActionOrRoleWords() {
         List<Partner> contacts=Collections.singletonList(partner(8,"Công ty Xuất Nhập Khẩu NCC",Partner.SUPPLIER,""));
-        InventoryPartnerChatInterpreter.Result first=InventoryPartnerChatInterpreter.interpret("nhập 2 KH001",Collections.singletonList(product()),contacts,null);
+        InventoryPartnerChatInterpreter.Result first=InventoryPartnerChatInterpreter.interpret("nhập 2 KH001 nhà cung cấp Công ty Xuất Nhập Khẩu NCC",Collections.singletonList(product()),contacts,null);
         assertTrue(InventoryPartnerChatInterpreter.interpret("Công ty Xuất Nhập Khẩu NCC",Collections.singletonList(product()),contacts,first.draft).ready());
     }
 }

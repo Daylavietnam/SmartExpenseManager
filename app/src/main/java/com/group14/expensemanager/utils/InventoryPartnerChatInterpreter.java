@@ -16,7 +16,8 @@ public final class InventoryPartnerChatInterpreter {
         Result(boolean handled, InventoryChatInterpreter.Draft draft, Product product, String reply) {
             this.handled=handled;this.draft=draft;this.product=product;this.reply=reply;
         }
-        public boolean ready() { return handled && reply==null && product!=null && draft!=null && draft.partnerId!=0
+        public boolean ready() { return handled && reply==null && product!=null && draft!=null
+                && (!Transaction.TYPE_EXPENSE.equals(draft.type)||draft.partnerId!=0)
                 && draft.quantity!=null && (Transaction.TYPE_INCOME.equals(draft.type)||draft.unitPrice!=null); }
     }
     public static Result interpret(String content,List<Product> products,List<Partner> partners,InventoryChatInterpreter.Draft pending) {
@@ -63,7 +64,7 @@ public final class InventoryPartnerChatInterpreter {
             if(!exists)draft.partnerId=0;
         }
         if(!stock.ready()) return new Result(true,draft,stock.product,stock.reply);
-        if(draft.partnerId==0) return ask(draft,stock.product,partners,"");
+        if(draft.partnerId==0 && Transaction.TYPE_EXPENSE.equals(draft.type)) return ask(draft,stock.product,partners,"");
         return new Result(true,draft,stock.product,null);
     }
     private static Result convert(InventoryChatInterpreter.Result result) {

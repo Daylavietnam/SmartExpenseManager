@@ -22,10 +22,10 @@
 - Chat có thể tạo phiếu ngay với câu rõ ràng như `Tôi đã nhập 20 chai nước suối`, `xuất 5 NS001` hoặc `nhập 20 NS001 đơn giá 5000`. Các lệnh này xử lý trong app, không cần gọi Gemini. Tên phải khớp tên đầy đủ hoặc mã hàng trong danh mục; chưa hỗ trợ mọi cách diễn đạt.
 - Thiếu tên/số lượng thì chat hỏi lại; trả lời để hoàn tất, hoặc gõ `Hủy`. Mỗi yêu cầu một sản phẩm, ngày phiếu là hôm nay. Nhập hàng không ghi giá thì dùng giá tham chiếu hiện tại. Xuất hàng không ghi giá thì chat hỏi đơn giá; trả lời `5000`, `5.000đ` hoặc `giá 5000` rồi mới tạo phiếu/trừ kho. Ghi đơn giá ngay trong lệnh xuất thì không cần hỏi lại. Câu hỏi, phủ định, giả định, đơn vị không khớp và xuất quá tồn không tự thay đổi kho.
 - Với mã hàng chỉ gồm số, ghi rõ `nhập 5 mã 123` để tránh nhầm mã với số lượng. Chat không tự quy đổi thùng/chai hay kg/gram.
-- Chat bắt buộc chọn nhà cung cấp khi nhập và khách hàng khi xuất. Thiếu đối tác thì chat hỏi tên đầy đủ, số điện thoại hoặc `mã đối tác ID`; đối tác phải có trong danh bạ và đúng loại. Tên trùng sẽ được hỏi lại, không tự chọn. Có thể ghi ngay `nhập 20 NS001 nhà cung cấp TÊN` hoặc `xuất 5 NS001 khách hàng TÊN giá 5000`. Tồn kho chỉ đổi sau khi có đủ sản phẩm, số lượng, giá xuất và đối tác. Thiếu giá xuất thì hỏi giá trước, rồi hỏi khách hàng nếu còn thiếu.
+- Nhà cung cấp khi nhập là không bắt buộc; có thể ghi `nhập 20 NS001` để tạo phiếu không gắn đối tác, hoặc thêm `nhà cung cấp TÊN` nếu muốn lưu đối tác. Khi xuất, khách hàng vẫn bắt buộc; nếu thiếu, chat hỏi tên đầy đủ, số điện thoại hoặc `mã đối tác ID` trong danh bạ. Đối tác ghi rõ phải đúng loại; tên trùng sẽ được hỏi lại. Thiếu giá xuất thì chat hỏi giá trước rồi hỏi khách hàng. Tồn kho chỉ đổi sau khi có đủ thông tin bắt buộc.
 - Phiếu tạo từ chat xuất hiện trong Lịch sử và cập nhật tồn/cảnh báo/báo cáo. Phản hồi thành công được lưu cùng giao dịch cơ sở dữ liệu; lỗi lưu không tạo phản hồi thành công.
 - Dữ liệu kho nằm trong `smart_stock_db`; cơ sở dữ liệu chi tiêu cũ được giữ lại, không tự chuyển thành hàng hóa. Lịch sử chat kho bắt đầu mới; cài đặt giao diện và bảo mật hiện có vẫn dùng được.
-- Bản này quản lý một kho và nhiều sản phẩm trên mỗi phiếu. Chat tạo phiếu một sản phẩm và yêu cầu đối tác; có thể mở phiếu đó trong Lịch sử để thêm ghi chú và dòng hàng khác. Chưa có nhiều kho hoặc lô/hạn sử dụng.
+- Bản này quản lý một kho và nhiều sản phẩm trên mỗi phiếu. Chat tạo phiếu một sản phẩm; khách hàng khi xuất là bắt buộc, nhà cung cấp khi nhập là tùy chọn; có thể mở phiếu đó trong Lịch sử để thêm ghi chú và dòng hàng khác. Chưa có nhiều kho hoặc lô/hạn sử dụng.
 - Room nâng `smart_stock_db` từ phiên bản 1 lên 2 bằng migration, không xóa dữ liệu. Phiếu cũ giữ số lượng/giá và được cấp mã `legacy-ID`, mỗi phiếu cũ vẫn là một dòng. Tên và số điện thoại đối tác được lưu tại thời điểm lập phiếu, nên sửa danh bạ không đổi thông tin lịch sử. Khi cập nhật phiếu, thông tin đối tác được lấy lại từ danh bạ.
 
 ## Kiểm tra
@@ -33,3 +33,7 @@
 Chạy `gradlew.bat assembleDebug testDebugUnitTest` với JDK của Android Studio. Các bài kiểm tra StockCalculator bao gồm tồn theo sản phẩm, xuất quá tồn, xuất trước nhập, sửa/xóa phiếu nhập, số lượng lẻ và dữ liệu không hợp lệ.
 
 APK: `app/build/outputs/apk/debug/app-debug.apk`.
+
+## Gemini API key
+
+Add `GEMINI_API_KEY=your-key` to the ignored `local.properties` file before using AI chat. Never commit the API key.
