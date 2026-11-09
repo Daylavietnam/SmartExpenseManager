@@ -8,6 +8,7 @@ import java.util.regex.*;
 public final class InventoryPartnerChatInterpreter {
     private static final Pattern LABEL = Pattern.compile("\\b(?:(?:tu|cho|cua|ben)\\s+)?(nha cung cap|ncc|khach hang|kh)\\b\\s*[:=]?\\s*");
     private static final Pattern ACTION = Pattern.compile("\\b(nhap|them|xuat|suat|ban)\\b");
+    private static final Pattern NO_PARTNER = Pattern.compile("^(khong co|khong can)$");
     public static class Result {
         public final boolean handled;
         public final InventoryChatInterpreter.Draft draft;
@@ -36,11 +37,12 @@ public final class InventoryPartnerChatInterpreter {
             if(LABEL.matcher(stockText).find()) return new Result(true,null,null,"Hãy chọn một đối tác cho mỗi phiếu. Tồn kho chưa thay đổi.");
         }
         boolean partnerAnswer=pending!=null && pending.awaitingPartner && (namedAnswer||!ACTION.matcher(stockText).find());
+        boolean skipPartner=partnerAnswer && Transaction.TYPE_INCOME.equals(pending.type) && NO_PARTNER.matcher(text).matches();
         InventoryChatInterpreter.Result stock;
         if(partnerAnswer) {
             if(text.contains("?")||Pattern.compile("\\b(neu|gia su|lam sao|bao nhieu)\\b").matcher(text).find())
                 return new Result(false,pending,null,null);
-            if(answer==null)answer=text;
+            if(answer==null && !skipPartner)answer=text;
             stock=InventoryChatInterpreter.interpret("",products,pending);
         } else stock=InventoryChatInterpreter.interpret(stockText,products,pending);
         if(!stock.handled || stock.draft==null) return convert(stock);
@@ -64,7 +66,7 @@ public final class InventoryPartnerChatInterpreter {
             if(!exists)draft.partnerId=0;
         }
         if(!stock.ready()) return new Result(true,draft,stock.product,stock.reply);
-        if(draft.partnerId==0 && Transaction.TYPE_EXPENSE.equals(draft.type)) return ask(draft,stock.product,partners,"");
+        if(draft.partnerId==0 && (Transaction.TYPE_EXPENSE.equals(draft.type)||!skipPartner)) return ask(draft,stock.product,partners,"");
         return new Result(true,draft,stock.product,null);
     }
     private static Result convert(InventoryChatInterpreter.Result result) {
@@ -86,7 +88,9 @@ public final class InventoryPartnerChatInterpreter {
     private static Result ask(InventoryChatInterpreter.Draft draft,Product product,List<Partner> partners,String prefix) {
         draft.awaitingPartner=true;
         String kind=Transaction.TYPE_INCOME.equals(draft.type)?"nhà cung cấp":"khách hàng";
-        StringBuilder reply=new StringBuilder(prefix).append("Phiếu này thuộc ").append(kind).append(" nào? Gửi tên đầy đủ, số điện thoại hoặc mã đối tác trong danh bạ.");
+        StringBuilder reply=new StringBuilder(prefix);
+        if(Transaction.TYPE_INCOME.equals(draft.type)) reply.append("Nhập từ nhà cung cấp nào không? Gửi tên đầy đủ, số điện thoại hoặc mã đối tác, hoặc gõ “không có”.");
+        else reply.append("Phiếu này thuộc khách hàng nào? Gửi tên đầy đủ, số điện thoại hoặc mã đối tác trong danh bạ.");
         int count=0;
         for(Partner p:partners)if(expected(draft.type).equals(p.type)) {
             if(count++<8)reply.append("\nMã đối tác ").append(p.id).append(" — ").append(p.name).append(p.phone.isEmpty()?"":" • "+p.phone);

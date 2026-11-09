@@ -174,11 +174,20 @@ public class TransactionRepository {
     /** The movement and its success reply commit together. No AI response can assert an uncommitted write. */
     public void saveChatMovement(Transaction movement, boolean referencePrice, WriteCallback callback) {
         write(() -> {
-            com.group14.expensemanager.model.Partner partner = database.partnerDao().find(movement.getPartnerId());
+            com.group14.expensemanager.model.Partner partner = movement.getPartnerId() == 0
+                    ? null : database.partnerDao().find(movement.getPartnerId());
             String partnerType = movement.isIncome() ? com.group14.expensemanager.model.Partner.SUPPLIER : com.group14.expensemanager.model.Partner.CUSTOMER;
-            if (partner == null || !partnerType.equals(partner.type))
-                throw new IllegalArgumentException(movement.isIncome() ? "Cần chọn nhà cung cấp có trong danh bạ." : "Cần chọn khách hàng có trong danh bạ.");
-            movement.setPartnerName(partner.name); movement.setPartnerPhone(partner.phone);
+            if (movement.getPartnerId() != 0 && (partner == null || !partnerType.equals(partner.type)))
+                throw new IllegalArgumentException(movement.isIncome() ? "Nhà cung cấp không còn trong danh bạ." : "Khách hàng không còn trong danh bạ.");
+            if (!movement.isIncome() && partner == null)
+                throw new IllegalArgumentException("Cần chọn khách hàng có trong danh bạ.");
+            if (partner != null) {
+                movement.setPartnerName(partner.name);
+                movement.setPartnerPhone(partner.phone);
+            } else {
+                movement.setPartnerName("");
+                movement.setPartnerPhone("");
+            }
             if (!movement.isIncome() && referencePrice)
                 throw new IllegalArgumentException("Cần nhập đơn giá xuất trước khi lưu phiếu.");
             if (referencePrice) {
@@ -195,8 +204,8 @@ public class TransactionRepository {
                     + "\nTồn hiện tại: " + format.format(stock) + " " + movement.getUnit() + "."
                     + "\nĐơn giá: " + format.format(movement.getUnitPrice()) + "đ"
                     + (referencePrice ? " (giá tham chiếu của sản phẩm)." : ".")
-                    + "\n" + (movement.isIncome() ? "Nhà cung cấp: " : "Khách hàng: ") + partner.name
-                    + (partner.phone.isEmpty() ? "." : " • " + partner.phone + ".")
+                    + (partner == null ? "" : "\n" + (movement.isIncome() ? "Nhà cung cấp: " : "Khách hàng: ") + partner.name
+                    + (partner.phone.isEmpty() ? "." : " • " + partner.phone + "."))
                     + "\nPhiếu đã được lưu trong Lịch sử. Có thể sửa hoặc xóa ở đó.";
             chatDao.insert(new ChatMessage(reply, ChatMessage.TYPE_AI));
         }, callback);

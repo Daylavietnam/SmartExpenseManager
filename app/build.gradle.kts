@@ -10,7 +10,7 @@ val localProperties = Properties().apply {
         localPropertiesFile.inputStream().use { load(it) }
     }
 }
-val geminiApiKey = localProperties.getProperty("GEMINI_API_KEY", "")
+val openRouterApiKey = localProperties.getProperty("OPENROUTER_API_KEY", "")
 
 android {
     namespace = "com.group14.expensemanager"
@@ -24,7 +24,7 @@ android {
         versionName = "1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "GEMINI_API_KEY", "\"${geminiApiKey.replace("\\", "\\\\").replace("\"", "\\\"")}\"")
+        buildConfigField("String", "OPENROUTER_API_KEY", "\"${openRouterApiKey.replace("\\", "\\\\").replace("\"", "\\\"")}\"")
     }
 
     buildFeatures {

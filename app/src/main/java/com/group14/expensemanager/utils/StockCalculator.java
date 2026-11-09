@@ -14,6 +14,15 @@ public final class StockCalculator {
         return Math.abs(result) < 1e-8 ? 0 : result;
     }
 
+    /** Stock for every product in one pass over the movements. */
+    public static Map<Integer, Double> stocks(List<Transaction> movements) {
+        Map<Integer, Double> result = new HashMap<>();
+        if (movements != null) for (Transaction t : movements) {
+            result.merge(t.getProductId(), t.isIncome() ? t.getQuantity() : -t.getQuantity(), Double::sum);
+        }
+        return result;
+    }
+
     /** Reject edits/deletions/backdated issues that make any product negative at any date. */
     public static boolean validHistory(List<Transaction> movements) {
         List<Transaction> ordered = new ArrayList<>(movements);

@@ -36,4 +36,4 @@ APK: `app/build/outputs/apk/debug/app-debug.apk`.
 
 ## Gemini API key
 
-Add `GEMINI_API_KEY=your-key` to the ignored `local.properties` file before using AI chat. Never commit the API key.
+Add `OPENROUTER_API_KEY=your-key` to the ignored `local.properties` file before using AI chat. Never commit the API key.
